@@ -3,6 +3,7 @@ package com.zhisan.gameboot.global;
 import lombok.Data;
 
 import javax.websocket.Session;
+import java.io.Closeable;
 import java.io.Serializable;
 
 /**
@@ -15,7 +16,7 @@ public class GameBootSession implements Serializable {
     /**
      * 会话对象
      */
-    private Session session;
+    private Closeable session;
 
     /**
      * 房间
@@ -24,7 +25,7 @@ public class GameBootSession implements Serializable {
      */
     private GameBootRoom gameBootRoom;
 
-    public GameBootSession(Session session) {
+    public GameBootSession(Closeable session) {
         this.session = session;
     }
 
